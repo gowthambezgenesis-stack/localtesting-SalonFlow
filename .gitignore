@@ -9,6 +9,7 @@ __pycache__/
 .venv/
 venv/
 *.egg-info/
+*.log
 
 # Node
 node_modules/
@@ -24,3 +25,12 @@ dist/
 *.sqlite3
 media/
 staticfiles/
+
+# Docker
+*.sqlite3
+
+# OS
+.DS_Store
+Thumbs.db
+
+
