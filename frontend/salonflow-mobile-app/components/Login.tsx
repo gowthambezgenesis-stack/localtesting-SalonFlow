@@ -5,6 +5,8 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { setAccessToken } from '../services/auth';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000';
+
 interface CountryCode {
   code: string;
   dialCode: string;
@@ -63,14 +65,14 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
       
       if (activeTab === 'customer') {
 
-        await axios.post("http://localhost:8000/send-otp/", {
+        await axios.post(`${API_BASE_URL}/send-otp/`, {
           name,
           phone_number: fullPhoneNumber,
 
         });
       } else {
 
-        await axios.post("http://localhost:8000/owner/login/", {
+        await axios.post(`${API_BASE_URL}/owner/login/`, {
           phone_number: fullPhoneNumber,
 
         });
@@ -96,7 +98,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
       
       if (activeTab === 'customer') {
 
-        const res = await axios.post("http://localhost:8000/verify-otp/", {
+        const res = await axios.post(`${API_BASE_URL}/verify-otp/`, {
           phone_number: fullPhoneNumber,
           otp,
         }, {
@@ -110,7 +112,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
           navigate("/customer/home");
         }
       } else {
-        const res = await axios.post("http://localhost:8000/owner/verify/", {
+        const res = await axios.post(`${API_BASE_URL}/owner/verify/`, {
           phone_number: fullPhoneNumber,
           otp,
         }, {
@@ -395,3 +397,5 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 };
 
 export default Login;
+
+
