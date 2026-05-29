@@ -11,14 +11,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterModelOptions(
-            name='staffavailability',
-            options={'ordering': ['year', 'month', 'day']},
-        ),
-        migrations.AlterUniqueTogether(
-            name='staffavailability',
-            unique_together=set(),
-        ),
+        
         migrations.AddField(
             model_name='staffavailability',
             name='day',
@@ -29,10 +22,7 @@ class Migration(migrations.Migration):
             name='staff_count',
             field=models.PositiveIntegerField(default=1, help_text='Number of available staff for this period'),
         ),
-        migrations.AlterUniqueTogether(
-            name='staffavailability',
-            unique_together={('year', 'month', 'day')},
-        ),
+       
         migrations.CreateModel(
             name='BlockedSlot',
             fields=[
@@ -48,3 +38,4 @@ class Migration(migrations.Migration):
             },
         ),
     ]
+

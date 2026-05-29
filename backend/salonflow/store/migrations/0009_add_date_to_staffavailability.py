@@ -49,7 +49,11 @@ class Migration(migrations.Migration):
         # Migrate data from year/month/day to date
         migrations.RunPython(migrate_year_month_day_to_date, reverse_migrate_date_to_year_month_day),
         # Remove old fields
-        migrations.RemoveField(
+        migrations.AlterUniqueTogether(
+           name='staffavailability',
+           unique_together=set(),
+        ),
+         migrations.RemoveField(
             model_name='staffavailability',
             name='year',
         ),
