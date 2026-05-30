@@ -81,7 +81,8 @@ CORS_ALLOW_HEADERS = [
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
-    "http://192.168.140.128:3000"
+    "http://192.168.140.128:3000",
+    "https://salonflow-backend8.onrender.com"
 ]
 
 
