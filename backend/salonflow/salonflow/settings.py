@@ -62,7 +62,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS =[
    "http://localhost:3000",
    "http://localhost:5173",
-   "http://192.168.140.128:3000"    
+   "https://salonflow-backend8.onrender.com"   
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -81,8 +81,8 @@ CORS_ALLOW_HEADERS = [
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
-    "http://192.168.140.128:3000",
-    "https://salonflow-backend8.onrender.com"
+    "https://salonflow-backend8.onrender.com",
+    "https://localtesting-salon-flow-layc.vercel.app"
 ]
 
 
